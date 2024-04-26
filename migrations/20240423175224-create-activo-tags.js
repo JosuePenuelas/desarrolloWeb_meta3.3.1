@@ -14,7 +14,9 @@ module.exports = {
         references: {
           model: "Activos",
           key: "id"
-        }
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
       tagId: {
         type: Sequelize.INTEGER,
