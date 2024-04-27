@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 4000;
 
 var fs = require('fs');
 var https = require('https');
@@ -12,6 +12,8 @@ app.use(express.json());
 const activoRoute = require('./routes/activoRoute');
 const responsableRoute = require('./routes/responsableRoute');
 const ubicacionRoute = require('./routes/ubicacionRoute');
+const tagRoute = require('./routes/tagRoute');
+const activoTagRoute = require('./routes/activoTagRoute');
 
 app.get("/", (req, res) => {
     res.send("Backend meta 3.3.1")
@@ -20,6 +22,8 @@ app.get("/", (req, res) => {
 app.use("/activos", activoRoute);
 app.use("/responsables", responsableRoute);
 app.use("/ubicaciones", ubicacionRoute);
+app.use("/tags", tagRoute);
+app.use("/activoTags", activoTagRoute);
 
 const llavePrivada = fs.readFileSync("server.key");
 const certificado = fs.readFileSync("server.crt");
