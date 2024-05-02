@@ -36,10 +36,7 @@ const activoTagsController = {
             }
 
             // Crear la relación entre el activo y el tag
-            await ActivoTags.create({
-                activoId,
-                tagId
-            });
+            await activo.addTag(tag);
 
             res.json({ mensaje: 'Tag asignado correctamente al activo' });
         } catch (error) {
@@ -71,12 +68,7 @@ const activoTagsController = {
             }
 
             // Eliminar la relación entre el activo y el tag
-            await ActivoTags.destroy({
-                where: {
-                    activoId,
-                    tagId
-                }
-            });
+            await activo.removeTag(tag);
 
             res.json({ mensaje: 'Tag desasignado correctamente del activo' });
         } catch (error) {

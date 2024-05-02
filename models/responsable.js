@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   Responsable.init({
     numEmpleado: { type: DataTypes.INTEGER, allowNull: false, unique: true },
     nombre: { type: DataTypes.STRING, allowNull: false },
-    Imagen: { type: DataTypes.BLOB, allowNull: true }
+    imagen: { type: DataTypes.BLOB, allowNull: true }
   }, {
     sequelize,
     modelName: 'Responsable',

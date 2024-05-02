@@ -4,6 +4,6 @@ const activoTagsController = require('../controllers/activoTagController');
 
 router.get('/', activoTagsController.getAll);
 router.post('/asignar', activoTagsController.assignTagToActivo);
-router.post('/desasignar', activoTagsController.unassignTagFromActivo);
+router.delete('/desasignar', activoTagsController.unassignTagFromActivo);
 
 module.exports = router;
